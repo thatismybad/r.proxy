@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  reverse-proxy:
+  rproxy:
     image: "jwilder/nginx-proxy:latest"
     container_name: "rproxy"
     volumes:
