@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  api:
+    container_name: api
+    image: my/image
+    restart: always
+    ports:
+      - 9999:3000
+    command: some command for the container
+    networks:
+      - proxy-net
+    environment:
+      VIRTUAL_HOST: my-sub.domain.com
+      LETSENCRYPT_HOST: my-sub.domain.com
+      VIRTUAL_PORT: my-sub.domain.com
+
+networks:
+  proxy-net:
+    external: true
